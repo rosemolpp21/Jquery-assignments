@@ -1,0 +1,8 @@
+.deletebutton{
+    background: red;
+    color: black;
+}
+.extra-details{
+    display:none;
+    transition-delay:3s ease-in;
+}
