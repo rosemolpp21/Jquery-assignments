@@ -8,6 +8,14 @@
     font-weight: bolder;
     font-size: larger;
     text-decoration: double;
+    list-style: none;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
 }
 
 .delete-task {
@@ -20,4 +28,20 @@
 #count-id3,
 #count-id2 {
     font-weight: bold;
+}
+
+#main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f8e1b5;
+    width: 400px;
+    margin: auto;
+    box-shadow: 5px 5px #c3c3c3;
+}
+
+#show-all,
+#completed,
+#incomplete {
+    font-weight: bolder;
 }
