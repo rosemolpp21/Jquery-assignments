@@ -1,0 +1,23 @@
+.task {
+    color: #d3d3d3 !important;
+    text-decoration: line-through !important;
+}
+
+#task-list li {
+    color: rgb(0, 64, 97);
+    font-weight: bolder;
+    font-size: larger;
+    text-decoration: double;
+}
+
+.delete-task {
+    background-color: red;
+    color: black;
+
+}
+
+#count-id1,
+#count-id3,
+#count-id2 {
+    font-weight: bold;
+}
