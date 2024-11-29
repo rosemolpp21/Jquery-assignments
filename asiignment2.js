@@ -13,7 +13,7 @@ $("#add-task").on("click", function () {
     else {
         alert("input cannnot be empty");
     }
-    update()
+    showall()
 })
 
 
@@ -27,7 +27,7 @@ $("#task-list").on("click", ".delete-task", function () {
 
 $("#completed").on("click", function () {
     $("#task-list li").each(function () {
-        if ($(this).hasClass("task")&&$(this).attr("id") !== `${$(this)}-deleted`) {
+        if ($(this).hasClass("task") && $(this).attr("id") !== `${$(this)}-deleted`) {
             $(this).show();
             $(this).next().show();
         } else {
@@ -38,19 +38,8 @@ $("#completed").on("click", function () {
     });
 })
 
-$("#show-all").on("click", function () {
-    $("#task-list li").each(function () {
-        if ($(this).attr("id") === `${$(this)}-deleted`) {
-            $(this).hide();
-            $(this).next().hide();
-        }
-        else {
-            $(this).show();
-            $(this).next().show();
-        }
-    })
-    update()
-})
+
+$("#show-all").on("click", showall)
 
 
 $("#incomplete").on("click", function () {
@@ -66,6 +55,22 @@ $("#incomplete").on("click", function () {
     });
     update()
 })
+
+
+function showall() {
+    $("#task-list li").each(function () {
+        if ($(this).attr("id") === `${$(this)}-deleted`) {
+            $(this).hide();
+            $(this).next().hide();
+        }
+        else {
+            $(this).show();
+            $(this).next().show();
+        }
+    })
+    update()
+}
+
 
 function update() {
     alltaskcount = 0;
