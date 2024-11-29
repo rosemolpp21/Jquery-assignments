@@ -27,7 +27,7 @@ $("#task-list").on("click", ".delete-task", function () {
 
 $("#completed").on("click", function () {
     $("#task-list li").each(function () {
-        if ($(this).hasClass("task")) {
+        if ($(this).hasClass("task")&&$(this).attr("id") !== `${$(this)}-deleted`) {
             $(this).show();
             $(this).next().show();
         } else {
