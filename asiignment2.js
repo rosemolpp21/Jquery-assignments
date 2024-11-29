@@ -8,7 +8,7 @@ $("#task-list").on("click", "li", function () {
 
 $("#add-task").on("click", function () {
     if ($("#input-new-task").val() !== "") {
-        $("#task-list").append(`<li >${$("#input-new-task").val()}<input type="checkbox"></li><button class="delete-task">Delete task</button>`)
+        $("#task-list").append(`<li >${$("#input-new-task").val()}</li><button class="delete-task">Delete task</button>`)
     }
     else {
         alert("input cannnot be empty");
