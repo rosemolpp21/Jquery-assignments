@@ -84,8 +84,8 @@ function update() {
             alltaskcount = alltaskcount + 1;
         }
     })
-    $("#count-id1").text(`Count of completed tasks -${completedCount} `)
-    $("#count-id2").text(` Count of incomplete tasks -${alltaskcount - completedCount} `)
-    $("#count-id3").text(` Count of total tasks -${alltaskcount} `)
+    $("#count-id1").text(`Count of completed tasks - ${completedCount} `)
+    $("#count-id2").text(` Count of incomplete tasks - ${alltaskcount - completedCount} `)
+    $("#count-id3").text(` Count of total tasks - ${alltaskcount} `)
 }
 update()
