@@ -9,6 +9,7 @@ $("#task-list").on("click", "li", function () {
 $("#add-task").on("click", function () {
     if ($("#input-new-task").val() !== "") {
         $("#task-list").append(`<li >${$("#input-new-task").val()}</li><button class="delete-task">Delete task</button>`)
+        $("#input-new-task").val(null);
     }
     else {
         alert("input cannnot be empty");
@@ -19,15 +20,15 @@ $("#add-task").on("click", function () {
 
 $("#task-list").on("click", ".delete-task", function () {
     $(this).fadeOut(200);
-    $(this).prev("li").fadeOut(200)
-    $(this).prev("li").attr("id", `${$(this)}-deleted`)
+    $(this).prev("li").fadeOut(200);
+    $(this).prev("li").addClass("deleted");
     update()
 })
 
 
 $("#completed").on("click", function () {
     $("#task-list li").each(function () {
-        if ($(this).hasClass("task") && $(this).attr("id") !== `${$(this)}-deleted`) {
+        if ($(this).hasClass("task") && (!$(this).hasClass("deleted"))) {
             $(this).show();
             $(this).next().show();
         } else {
@@ -44,7 +45,7 @@ $("#show-all").on("click", showall)
 
 $("#incomplete").on("click", function () {
     $("#task-list li").each(function () {
-        if ($(this).hasClass("task") || $(this).attr("id") === `${$(this)}-deleted`) {
+        if ($(this).hasClass("task") || $(this).hasClass("deleted")) {
             $(this).hide();
             $(this).next().hide();
         }
@@ -59,7 +60,7 @@ $("#incomplete").on("click", function () {
 
 function showall() {
     $("#task-list li").each(function () {
-        if ($(this).attr("id") === `${$(this)}-deleted`) {
+        if ($(this).hasClass("deleted")) {
             $(this).hide();
             $(this).next().hide();
         }
@@ -77,13 +78,12 @@ function update() {
     completedCount = 0;
     $("#task-list li").each(function () {
         alltaskcount = alltaskcount + 1;
-        if ($(this).hasClass("task") && $(this).attr("id") !== `${$(this)}-deleted`) {
+        if ($(this).hasClass("task") && (!$(this).hasClass("deleted"))) {
             completedCount = completedCount + 1
         }
-        if ($(this).attr("id") === `${$(this)}-deleted`) {
+        if ($(this).hasClass("deleted")) {
             alltaskcount = alltaskcount - 1;
         }
-
     })
     $("#count-id1").text(`Count of completed tasks -${completedCount} `)
     $("#count-id2").text(` Count of incomplete tasks -${alltaskcount - completedCount} `)
