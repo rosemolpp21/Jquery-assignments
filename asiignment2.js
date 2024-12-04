@@ -77,12 +77,11 @@ function update() {
     alltaskcount = 0;
     completedCount = 0;
     $("#task-list li").each(function () {
-        alltaskcount = alltaskcount + 1;
         if ($(this).hasClass("task") && (!$(this).hasClass("deleted"))) {
-            completedCount = completedCount + 1
+            completedCount = completedCount + 1;
         }
-        if ($(this).hasClass("deleted")) {
-            alltaskcount = alltaskcount - 1;
+        if (!$(this).hasClass("deleted")) {
+            alltaskcount = alltaskcount + 1;
         }
     })
     $("#count-id1").text(`Count of completed tasks -${completedCount} `)
