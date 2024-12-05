@@ -2,6 +2,12 @@
 *{
     font-family: "poppins";
 }
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2a2828; 
+    text-shadow: 5px 5px 0 #E0E0E0;
+}
 .task {
     color: #d3d3d3 !important;
     text-decoration: line-through !important;
@@ -9,8 +15,9 @@
 #task-list li {
     color: rgb(0, 64, 97);
     font-weight: 500;
-    font-size: larger;
+    font-size:medium;
     list-style: none;
+    font-weight: bold;
 }
 #input-new-task,#add-task{
     border-radius: 30px;
@@ -55,7 +62,7 @@
 #count-id3,
 #count-id2 {
     font-weight: 500;
-    font-size: 15px;
+    font-size: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
