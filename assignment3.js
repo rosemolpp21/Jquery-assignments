@@ -11,8 +11,8 @@ $(document).ready(function () {
             $("#name-error").html("name should have atleast 3 letters");
             valid = false;
         }
-        const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-        if (!emailPattern.test(emailid)) {
+        const emailpattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+        if (!emailpattern.test(emailid)) {
             $('#mail-error').text('Enter a valid email id');
             valid = false;
         }
@@ -41,4 +41,3 @@ $(document).ready(function () {
 
     })
 })
-
