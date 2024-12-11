@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <form id="myform">
+        <h2>Feedback Form</h2>
+        <label for="fname">Name</label><br>
+        <input type="text" id="fname" placeholder="enter your name" required>
+        <p id="name-error" class="error"></p>
+        <label for="emailid">Email</label><br>
+        <input type="email" id="emailid" placeholder="enter your mail id" required>
+        <p id="mail-error" class="error"></p>
+        <label for="feedback">Feedback</label><br>
+        <textarea name="feedback" id="feedback" required></textarea>
+        <p id="feedback-error" class="error"></p>
+        <button type="submit" id="form-submit">Submit form</button>
+        <p id="succes-msg"></p>
+    </form>
+    <script src="assignment3.js"></script>
+</body>
+
+</html>
